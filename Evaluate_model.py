@@ -17,8 +17,7 @@ from datetime import datetime
 tempoInicial = t.time()
 
 # load model
-model = load_model('/home/mpierre/PycharmProjects/ImgArmadilhas/'
-                   'BaseOutubro/Teste_Treinamento/models/best_modelFold3')
+model = load_model('/PATH')
 
 #===============================================
 # summarize model.
@@ -75,7 +74,7 @@ def load_dataset(base_dir, img_size, shuffle=True):
     return X, Y, classes, processed_image_count
 
 
-X_test, Y_test, classes_test, n_test = load_dataset('/home/mpierre/PycharmProjects/ImgArmadilhas/BaseOutubro/1_teste', 224, False)
+X_test, Y_test, classes_test, n_test = load_dataset('/PATH', 299, False)
 
 ytrain = np_utils.to_categorical(Y_test, len(classes_test))
 
