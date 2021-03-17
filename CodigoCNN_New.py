@@ -69,7 +69,7 @@ def load_dataset(base_dir, img_size, shuffle=True):
 
 
 # DIRETORIO COM AS IMAGENS
-X, Y, classes, n = load_dataset('/home/mpierre/PycharmProjects/ImgArmadilhas/BaseOutubro/2_treinamento',224, False)
+X, Y, classes, n = load_dataset('/PATH',299, False)
 
 
 # ============================================
@@ -78,7 +78,7 @@ from datetime import datetime
 import errno
 
 # DIRETORIO ONDE SERÃO SALVOS OS DADOS DE TREINAMENTO
-name = os.path.join("/", "home", "mpierre", "PycharmProjects","ImgArmadilhas" ,"BaseOutubro", "Treinamento")
+name = os.path.join("/", "....", "....", ".....","......" ,".....", "....")
 date_time = datetime.now().strftime("%d-%m-%Y__%H-%M-%S")
 name += date_time
 
@@ -145,11 +145,8 @@ def create_model(optimizer_):
 
     #model = Sequential()
 
-    img_rows, img_cols, img_channel = 224, 224, 3
+    img_rows, img_cols, img_channel = 299, 299, 3
 
-    # PRE TREINO COM DADOS DO IMAGENET
-    #base_model = applications.inception_v3.InceptionV3(include_top=False, weights='imagenet', pooling='avg',
-    #                                                   input_shape=(img_rows, img_cols, img_channel))
 
     base_model = applications.inception_v3.InceptionV3(include_top=False, weights=None, pooling='max',
                                                        input_shape=(img_rows, img_cols, img_channel))
@@ -187,7 +184,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
     f1_score
 
 #img_width, img_height = 224, 224
-img_width, img_height = 224, 224
+img_width, img_height = 299, 299
 
 
 def evaluate(model, eval_dir, samples):
